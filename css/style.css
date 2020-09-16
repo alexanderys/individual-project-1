@@ -1,0 +1,376 @@
+
+/* 
+Header - front image and navbar 
+Common to all three pages
+*/
+
+
+.front-img {
+    background-image: url(../images/front.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    margin: 10px;
+}
+
+
+.front-img h1 {
+    font-size: 35px;
+    text-shadow: 0 0 8px #FF0000, 0 0 8px #0000FF;
+    line-height: 2em;
+}
+
+.front-img h1 span {
+    font-size: 50px;
+}
+
+
+
+/* Tutorial for navbar:
+https://www.freecodecamp.org/news/how-to-create-a-fully-responsive-navbar-with-flexbox-a4435d175dd3/
+*/
+
+.nav-container {
+    list-style-type: none;
+    color: #fff;
+    background-color: #000;
+    padding: 30px 0;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px  #b42bdd;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.active {
+    font-size: 25px;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px  #b42bdd, 0 0 25px  #b42bdd, 0 0 30px  #b42bdd;
+}
+
+
+/* "Arkaden" page */
+/* Main content - the games */
+
+.main-container {
+    width: 98.5%;
+    margin: 10px auto;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+.main-container > section {
+    margin: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px  #b42bdd, 0 0 25px  #b42bdd, 0 0 30px  #b42bdd;
+}
+
+.main-container h2 {
+    color: #000;
+    margin: 20px 0;
+}
+
+/* Main - 1st game */
+
+
+/* Common for 2nd 3rd and 4th games */
+
+#game-2, #game-3, #game-4 {
+    cursor: pointer;
+    width: 600px;
+    height: 600px;
+    position: relative;
+}
+
+/* Main - 2nd game */
+
+@keyframes box2-1 {
+    0%   {background-color:rgb(255, 0, 221); left:0px; top:0px;}
+    25%  {background-color:rgb(47, 0, 255); left:200px; top:0px;}
+    50%  {background-color:rgb(0, 247, 255); left:200px; top:200px;}
+    75%  {background-color:rgb(63, 65, 207); left:0px; top:200px;}
+    100% {background-color:rgb(204, 0, 255); left:0px; top:0px;}
+}
+
+#box-2-1 {
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    border-radius: 5px;
+    position: absolute;
+    background-color: rgb(255, 0, 221);
+    animation-name: box2-1;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes box2-2 {
+    0%   {background-color:rgb(255, 0, 221); right:0px; top:0px;}
+    25%  {background-color:rgb(47, 0, 255); right:200px; top:0px;}
+    50%  {background-color:rgb(0, 247, 255); right:200px; top:200px;}
+    75%  {background-color:rgb(63, 65, 207); right:0px; top:200px;}
+    100% {background-color:rgb(204, 0, 255); right:0px; top:0px;}
+}
+
+#box-2-2 {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    position: absolute;
+    background-color: rgb(255, 0, 221);
+    animation-name: box2-2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes box2-3 {
+    0%   {background-color:rgb(255, 0, 221); left:0px; bottom:0px;}
+    25%  {background-color:rgb(47, 0, 255); left:200px; bottom:0px;}
+    50%  {background-color:rgb(0, 247, 255); left:200px; bottom:200px;}
+    75%  {background-color:rgb(63, 65, 207); left:0px; bottom:200px;}
+    100% {background-color:rgb(204, 0, 255); left:0px; bottom:0px;}
+  }
+
+#box-2-3 {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    position: absolute;
+    background-color: rgb(255, 0, 221);
+    animation-name: box2-3;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes box2-4 {
+    0%   {background-color:rgb(255, 0, 221); right:0px; bottom:0px;}
+    25%  {background-color:rgb(47, 0, 255); right:200px; bottom:0px;}
+    50%  {background-color:rgb(0, 247, 255); right:200px; bottom:200px;}
+    75%  {background-color:rgb(63, 65, 207); right:0px; bottom:200px;}
+    100% {background-color:rgb(204, 0, 255); right:0px; bottom:0px;}
+}
+
+#box-2-4 {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    position: absolute;
+    background-color: rgb(255, 0, 221);
+    animation-name: box2-4;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+
+/* Main - 3rd game */
+
+@keyframes box3-1 {
+    0%   {background-color:rgb(255, 0, 221); left:0px; top:0px;}
+    25%  {background-color:rgb(47, 0, 255); left:500px; top:500px;}
+    50%  {background-color:rgb(0, 247, 255); left:0px; top:500px;}
+    75%  {background-color:rgb(63, 65, 207); left:500px; top:0px;}
+    100% {background-color:rgb(204, 0, 255); left:0px; top:0px;}
+}
+ 
+#box-3-1 {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    position: absolute;
+    background-color: rgb(255, 0, 221);
+    animation-name: box3-1;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes box3-2 {
+    0%   {background-color:rgb(255, 0, 221); right:0px; top:0px;}
+    25%  {background-color:rgb(47, 0, 255); right:500px; top:500px;}
+    50%  {background-color:rgb(0, 247, 255); right:0px; top:500px;}
+    75%  {background-color:rgb(63, 65, 207); right:500px; top:0px;}
+    100% {background-color:rgb(204, 0, 255); right:0px; top:0px;}
+}
+ 
+#box-3-2 {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    position: absolute;
+    background-color: rgb(255, 0, 221);
+    animation-name: box3-2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes box3-3 {
+    0%   {background-color:rgb(255, 0, 221); left:0px; bottom:0px;}
+    25%  {background-color:rgb(47, 0, 255); left:500px; bottom:500px;}
+    50%  {background-color:rgb(0, 247, 255); left:0px; bottom:500px;}
+    75%  {background-color:rgb(63, 65, 207); left:500px; bottom:0px;}
+    100% {background-color:rgb(204, 0, 255); left:0px; bottom:0px;}
+}
+ 
+#box-3-3 {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    position: absolute;
+    background-color: rgb(255, 0, 221);
+    animation-name: box3-3;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes box3-4 {
+    0%   {background-color:rgb(255, 0, 221); right:0px; bottom:0px;}
+    25%  {background-color:rgb(47, 0, 255); right:500px; bottom:500px;}
+    50%  {background-color:rgb(0, 247, 255); right:0px; bottom:500px;}
+    75%  {background-color:rgb(63, 65, 207); right:500px; bottom:0px;}
+    100% {background-color:rgb(204, 0, 255); right:0px; bottom:0px;}
+}
+ 
+#box-3-4 {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    position: absolute;
+    background-color: rgb(255, 0, 221);
+    animation-name: box3-4;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+
+/* Main - 4th game */
+
+@keyframes box4-1 {
+    0%   {background-color:rgb(255, 0, 221); left:0px; top:0px;}
+    25%  {background-color:rgb(47, 0, 255); left:500px; top:500px;}
+    50%  {background-color:rgb(0, 247, 255); left:0px; top:0px;}
+    75%  {background-color:rgb(63, 65, 207); left:500px; top:500px;}
+    100% {background-color:rgb(204, 0, 255); left:0px; top:0px;}
+}
+ 
+#box-4-1 {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    position: absolute;
+    background-color: rgb(255, 0, 221);
+    animation-name: box4-1;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes box4-2 {
+    0%   {background-color:rgb(255, 0, 221); right:0px; top:0px;}
+    25%  {background-color:rgb(47, 0, 255); right:500px; top:500px;}
+    50%  {background-color:rgb(0, 247, 255); right:0px; top:0px;}
+    75%  {background-color:rgb(63, 65, 207); right:500px; top:500px;}
+    100% {background-color:rgb(204, 0, 255); right:0px; top:0px;}
+}
+ 
+#box-4-2 {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    position: absolute;
+    background-color: rgb(255, 0, 221);
+    animation-name: box4-2;
+    animation-duration: 2.75s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes box4-3 {
+    0%   {background-color:rgb(255, 0, 221); left:0px; bottom:0px;}
+    25%  {background-color:rgb(47, 0, 255); left:500px; bottom:500px;}
+    50%  {background-color:rgb(0, 247, 255); left:0px; bottom:0px;}
+    75%  {background-color:rgb(63, 65, 207); left:500px; bottom:500px;}
+    100% {background-color:rgb(204, 0, 255); left:0px; bottom:0px;}
+}
+ 
+#box-4-3 {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    position: absolute;
+    background-color: rgb(255, 0, 221);
+    animation-name: box4-3;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes box4-4 {
+    0%   {background-color:rgb(255, 0, 221); right:0px; bottom:0px;}
+    25%  {background-color:rgb(47, 0, 255); right:500px; bottom:500px;}
+    50%  {background-color:rgb(0, 247, 255); right:0px; bottom:0px;}
+    75%  {background-color:rgb(63, 65, 207); right:500px; bottom:500px;}
+    100% {background-color:rgb(204, 0, 255); right:0px; bottom:0px;}
+}
+ 
+#box-4-4 {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    position: absolute;
+    background-color: rgb(255, 0, 221);
+    animation-name: box4-4;
+    animation-duration: 3.25s;
+    animation-iteration-count: infinite;
+}
+
+
+/* "Spelregler" page */
+/* Basic styling for the .main-container and their child section elements inherited from previous styling */
+
+.rules {
+    width: 60%;
+    padding: 20px;
+}
+
+.rules > p {
+    font-size: 16px;
+    margin: 20px;
+    line-height: 2em;
+}
+
+.rules > img {
+    max-width: 100%;
+    border-radius: 7px;
+}
+
+/* "Kontakt" page */
+/* Basic styling for the .main-container and their child section elements inherited from previous styling */
+
+.contact-1 {
+    padding: 30px;
+}
+
+.contact-2 {
+
+    display: flex;
+
+    justify-content: space-evenly;
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+    width: 98.5%;
+    margin: 10px auto;
+    padding: 40px 0;
+    color: #fff;
+    background-color: #000;
+    border: 7px solid #fff;
+}

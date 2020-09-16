@@ -1,0 +1,10 @@
+
+
+canvas spel:
+https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript
+
+
+
+FRÅGOR:
+- Navbaren - centrera mittenobjektet ifall texterna är olika långa. Går det med flexbox?
+- Måste man använda flexbox överallt där det går att använda för att få VG?
