@@ -1,3 +1,7 @@
+:root {
+    --game-section-width: 600px;
+    --game-section-height: 600px;
+}
 
 /* 
 Header - front image and navbar 
@@ -82,12 +86,12 @@ https://www.freecodecamp.org/news/how-to-create-a-fully-responsive-navbar-with-f
 /* Main - 1st game */
 
 
-/* Common for 2nd 3rd and 4th games */
+/* Common for 2nd, 3rd, 4th and 5th games */
 
-#game-2, #game-3, #game-4 {
+#game-2, #game-3, #game-4, #game-5 {
     cursor: pointer;
-    width: 600px;
-    height: 600px;
+    width: var(--game-section-width);
+    height: var(--game-section-height);
     position: relative;
 }
 
@@ -326,6 +330,58 @@ https://www.freecodecamp.org/news/how-to-create-a-fully-responsive-navbar-with-f
     animation-name: box4-4;
     animation-duration: 3.25s;
     animation-iteration-count: infinite;
+}
+
+/* Main - 5th game */
+
+#game-5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#box-5-1 {
+    width: 350px;
+    height: 350px;
+    border-radius: 5px;
+    background-color: #000;
+    position: absolute;
+}
+
+#box-5-2 {
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    background-color: #fff;
+    position: absolute;
+}
+
+
+@keyframes box5-3 {
+    0%   {background-color:rgb(255, 0, 221);}
+    25%  {background-color:rgb(47, 0, 255);}
+    50%  {background-color:rgb(0, 247, 255);}
+    75%  {background-color:rgb(63, 65, 207);}
+    100% {background-color:rgb(204, 0, 255);}
+}
+
+
+#box-5-3 {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    position: absolute;
+
+    animation-name: box5-3;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+
+    transition: width 4s, height 4s;
+}
+
+#box-5-3:hover {
+    width: var(--game-section-width);
+    height: var(--game-section-height);
 }
 
 

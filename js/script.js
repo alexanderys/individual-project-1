@@ -57,3 +57,22 @@ function looseFourth(eachDiv) {
     const message = document.getElementById('game-4');
     message.innerHTML = 'DU FÖRLORA! <br> Uppdatera sidan för att spela igen!';
 }
+
+
+/* For 5th game */
+
+/* 
+Explanation for style.width versus clientWidth (style.width return undefined)
+https://stackoverflow.com/questions/8133146/difference-between-style-width-and-offsetwidth-in-html
+ */
+
+function overlapFifth(div) {
+    const element = document.getElementById(div);
+    if(element.clientWidth >= 300 && element.clientWidth <= 350) {
+        const message = document.getElementById('game-5');
+        message.innerHTML = 'DU VANN! <br> Uppdatera sidan för att spela igen!';
+    } else {
+        const message = document.getElementById('game-5');
+        message.innerHTML = 'DU FÖRLORA! <br> Uppdatera sidan för att spela igen!';
+    }
+}

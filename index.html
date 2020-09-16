@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- CHECKA INNAN SLUTFÖRING: https://webbriktlinjer.se/riktlinjer/ -->
     <header>
-        <section class="front-img">
+        <section class="front-img"> <!-- flex container -->
             <h1>Välkommen till <br> <span>Arkaden</span></h1>
         </section>
         <nav>
-            <ul class="nav-container">
+            <ul class="nav-container"> <!-- flex container -->
                 <li><a href="spelregler.html">Spelregler</a></li>
                 <li class="active"><a href="index.html">Arkaden</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
@@ -22,7 +23,7 @@
         </nav>
     </header>
 
-    <main class="main-container">
+    <main class="main-container"> <!-- flex container -->
         <section>
             <h2>Spel 1</h2>
             <canvas id="canvas" width="500px" height="500px"></canvas>
@@ -55,6 +56,15 @@
                 <div id="box-4-2" onclick="removeFourth('box-4-2')"></div>
                 <div id="box-4-3" onclick="removeFourth('box-4-3')"></div>
                 <div id="box-4-4" onclick="looseFourth('box-4-4')"></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Spel 5</h2> 
+            <div id="game-5"> <!-- flex container -->
+                <div id="box-5-1"></div>
+                <div id="box-5-2"></div>
+                <div id="box-5-3" onclick="overlapFifth('box-5-3')"></div>
             </div>
         </section>
 
