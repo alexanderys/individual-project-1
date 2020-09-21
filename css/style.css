@@ -1,8 +1,16 @@
 :root {
-    --game-section-width: 600px;
-    --game-section-height: 600px;
+    /* The following variables were created to make responsiveness easier to adjust for */
 
+    /* Game section side */
+    --game-section-side: 600px;
+
+    /* Side of each box within games */
     --box-side: 100px;
+
+    /* Used for positioning of boxes within games */
+    --game-1-pos: 200px;
+    --game-2-pos: 500px;
+    --game-3-pos: 500px;
 }
 
 /* 
@@ -70,47 +78,130 @@ https://www.freecodecamp.org/news/how-to-create-a-fully-responsive-navbar-with-f
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-top: 20px;
     padding-bottom: 70px;
 }
 
-.main-container > section {
+.sec-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.main-container .sec-container section {
     margin: 30px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px  #b42bdd, 0 0 25px  #b42bdd, 0 0 30px  #b42bdd;
 }
 
-.main-container h2 {
+.main-container .sec-container h2 {
     color: #000;
     margin: 20px 0;
 }
 
-/* Main - 1st game */
+/* Common for 1sr, 2nd, 3rd and 4th games */
 
-
-/* Common for 2nd, 3rd, 4th and 5th games */
-
-#game-2, #game-3, #game-4, #game-5 {
+#game-1, #game-2, #game-3, #game-4 {
     cursor: pointer;
-    width: var(--game-section-width);
-    height: var(--game-section-height);
+    width: var(--game-section-side);
+    height: var(--game-section-side);
     position: relative;
 }
+
+/* Main - 1st game */
+
+@keyframes box1-1 {
+    0%   {background-color:rgb(255, 0, 221); left:0px; top:0px;}
+    25%  {background-color:rgb(47, 0, 255); left:var(--game-1-pos); top:0px;}
+    50%  {background-color:rgb(0, 247, 255); left:var(--game-1-pos); top:var(--game-1-pos);}
+    75%  {background-color:rgb(63, 65, 207); left:0px; top:var(--game-1-pos);}
+    100% {background-color:rgb(204, 0, 255); left:0px; top:0px;}
+}
+
+#box-1-1 {
+    width: var(--box-side);
+    height: var(--box-side);
+    margin: 0;
+    border-radius: 5px;
+    position: absolute;
+    background-color: rgb(255, 0, 221);
+    animation-name: box1-1;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes box1-2 {
+    0%   {background-color:rgb(255, 0, 221); right:0px; top:0px;}
+    25%  {background-color:rgb(47, 0, 255); right:var(--game-1-pos); top:0px;}
+    50%  {background-color:rgb(0, 247, 255); right:var(--game-1-pos); top:var(--game-1-pos);}
+    75%  {background-color:rgb(63, 65, 207); right:0px; top:var(--game-1-pos);}
+    100% {background-color:rgb(204, 0, 255); right:0px; top:0px;}
+}
+
+#box-1-2 {
+    width: var(--box-side);
+    height: var(--box-side);
+    border-radius: 5px;
+    position: absolute;
+    background-color: rgb(255, 0, 221);
+    animation-name: box1-2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes box1-3 {
+    0%   {background-color:rgb(255, 0, 221); left:0px; bottom:0px;}
+    25%  {background-color:rgb(47, 0, 255); left:var(--game-1-pos); bottom:0px;}
+    50%  {background-color:rgb(0, 247, 255); left:var(--game-1-pos); bottom:var(--game-1-pos);}
+    75%  {background-color:rgb(63, 65, 207); left:0px; bottom:var(--game-1-pos);}
+    100% {background-color:rgb(204, 0, 255); left:0px; bottom:0px;}
+  }
+
+#box-1-3 {
+    width: var(--box-side);
+    height: var(--box-side);
+    border-radius: 5px;
+    position: absolute;
+    background-color: rgb(255, 0, 221);
+    animation-name: box1-3;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes box1-4 {
+    0%   {background-color:rgb(255, 0, 221); right:0px; bottom:0px;}
+    25%  {background-color:rgb(47, 0, 255); right:var(--game-1-pos); bottom:0px;}
+    50%  {background-color:rgb(0, 247, 255); right:var(--game-1-pos); bottom:var(--game-1-pos);}
+    75%  {background-color:rgb(63, 65, 207); right:0px; bottom:var(--game-1-pos);}
+    100% {background-color:rgb(204, 0, 255); right:0px; bottom:0px;}
+}
+
+#box-1-4 {
+    width: var(--box-side);
+    height: var(--box-side);
+    border-radius: 5px;
+    position: absolute;
+    background-color: rgb(255, 0, 221);
+    animation-name: box1-4;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
 
 /* Main - 2nd game */
 
 @keyframes box2-1 {
     0%   {background-color:rgb(255, 0, 221); left:0px; top:0px;}
-    25%  {background-color:rgb(47, 0, 255); left:200px; top:0px;}
-    50%  {background-color:rgb(0, 247, 255); left:200px; top:200px;}
-    75%  {background-color:rgb(63, 65, 207); left:0px; top:200px;}
+    25%  {background-color:rgb(47, 0, 255); left:var(--game-2-pos); top:var(--game-2-pos);}
+    50%  {background-color:rgb(0, 247, 255); left:0px; top:var(--game-2-pos);}
+    75%  {background-color:rgb(63, 65, 207); left:var(--game-2-pos); top:0px;}
     100% {background-color:rgb(204, 0, 255); left:0px; top:0px;}
 }
-
+ 
 #box-2-1 {
     width: var(--box-side);
     height: var(--box-side);
-    margin: 0;
     border-radius: 5px;
     position: absolute;
     background-color: rgb(255, 0, 221);
@@ -121,12 +212,12 @@ https://www.freecodecamp.org/news/how-to-create-a-fully-responsive-navbar-with-f
 
 @keyframes box2-2 {
     0%   {background-color:rgb(255, 0, 221); right:0px; top:0px;}
-    25%  {background-color:rgb(47, 0, 255); right:200px; top:0px;}
-    50%  {background-color:rgb(0, 247, 255); right:200px; top:200px;}
-    75%  {background-color:rgb(63, 65, 207); right:0px; top:200px;}
+    25%  {background-color:rgb(47, 0, 255); right:var(--game-2-pos); top:var(--game-2-pos);}
+    50%  {background-color:rgb(0, 247, 255); right:0px; top:var(--game-2-pos);}
+    75%  {background-color:rgb(63, 65, 207); right:var(--game-2-pos); top:0px;}
     100% {background-color:rgb(204, 0, 255); right:0px; top:0px;}
 }
-
+ 
 #box-2-2 {
     width: var(--box-side);
     height: var(--box-side);
@@ -140,12 +231,12 @@ https://www.freecodecamp.org/news/how-to-create-a-fully-responsive-navbar-with-f
 
 @keyframes box2-3 {
     0%   {background-color:rgb(255, 0, 221); left:0px; bottom:0px;}
-    25%  {background-color:rgb(47, 0, 255); left:200px; bottom:0px;}
-    50%  {background-color:rgb(0, 247, 255); left:200px; bottom:200px;}
-    75%  {background-color:rgb(63, 65, 207); left:0px; bottom:200px;}
+    25%  {background-color:rgb(47, 0, 255); left:var(--game-2-pos); bottom:var(--game-2-pos);}
+    50%  {background-color:rgb(0, 247, 255); left:0px; bottom:var(--game-2-pos);}
+    75%  {background-color:rgb(63, 65, 207); left:var(--game-2-pos); bottom:0px;}
     100% {background-color:rgb(204, 0, 255); left:0px; bottom:0px;}
-  }
-
+}
+ 
 #box-2-3 {
     width: var(--box-side);
     height: var(--box-side);
@@ -159,12 +250,12 @@ https://www.freecodecamp.org/news/how-to-create-a-fully-responsive-navbar-with-f
 
 @keyframes box2-4 {
     0%   {background-color:rgb(255, 0, 221); right:0px; bottom:0px;}
-    25%  {background-color:rgb(47, 0, 255); right:200px; bottom:0px;}
-    50%  {background-color:rgb(0, 247, 255); right:200px; bottom:200px;}
-    75%  {background-color:rgb(63, 65, 207); right:0px; bottom:200px;}
+    25%  {background-color:rgb(47, 0, 255); right:var(--game-2-pos); bottom:var(--game-2-pos);}
+    50%  {background-color:rgb(0, 247, 255); right:0px; bottom:var(--game-2-pos);}
+    75%  {background-color:rgb(63, 65, 207); right:var(--game-2-pos); bottom:0px;}
     100% {background-color:rgb(204, 0, 255); right:0px; bottom:0px;}
 }
-
+ 
 #box-2-4 {
     width: var(--box-side);
     height: var(--box-side);
@@ -181,9 +272,9 @@ https://www.freecodecamp.org/news/how-to-create-a-fully-responsive-navbar-with-f
 
 @keyframes box3-1 {
     0%   {background-color:rgb(255, 0, 221); left:0px; top:0px;}
-    25%  {background-color:rgb(47, 0, 255); left:500px; top:500px;}
-    50%  {background-color:rgb(0, 247, 255); left:0px; top:500px;}
-    75%  {background-color:rgb(63, 65, 207); left:500px; top:0px;}
+    25%  {background-color:rgb(47, 0, 255); left:var(--game-3-pos); top:var(--game-3-pos);}
+    50%  {background-color:rgb(0, 247, 255); left:0px; top:0px;}
+    75%  {background-color:rgb(63, 65, 207); left:var(--game-3-pos); top:var(--game-3-pos);}
     100% {background-color:rgb(204, 0, 255); left:0px; top:0px;}
 }
  
@@ -194,15 +285,15 @@ https://www.freecodecamp.org/news/how-to-create-a-fully-responsive-navbar-with-f
     position: absolute;
     background-color: rgb(255, 0, 221);
     animation-name: box3-1;
-    animation-duration: 4s;
+    animation-duration: 2.5s;
     animation-iteration-count: infinite;
 }
 
 @keyframes box3-2 {
     0%   {background-color:rgb(255, 0, 221); right:0px; top:0px;}
-    25%  {background-color:rgb(47, 0, 255); right:500px; top:500px;}
-    50%  {background-color:rgb(0, 247, 255); right:0px; top:500px;}
-    75%  {background-color:rgb(63, 65, 207); right:500px; top:0px;}
+    25%  {background-color:rgb(47, 0, 255); right:var(--game-3-pos); top:var(--game-3-pos);}
+    50%  {background-color:rgb(0, 247, 255); right:0px; top:0px;}
+    75%  {background-color:rgb(63, 65, 207); right:var(--game-3-pos); top:var(--game-3-pos);}
     100% {background-color:rgb(204, 0, 255); right:0px; top:0px;}
 }
  
@@ -213,15 +304,15 @@ https://www.freecodecamp.org/news/how-to-create-a-fully-responsive-navbar-with-f
     position: absolute;
     background-color: rgb(255, 0, 221);
     animation-name: box3-2;
-    animation-duration: 4s;
+    animation-duration: 2.75s;
     animation-iteration-count: infinite;
 }
 
 @keyframes box3-3 {
     0%   {background-color:rgb(255, 0, 221); left:0px; bottom:0px;}
-    25%  {background-color:rgb(47, 0, 255); left:500px; bottom:500px;}
-    50%  {background-color:rgb(0, 247, 255); left:0px; bottom:500px;}
-    75%  {background-color:rgb(63, 65, 207); left:500px; bottom:0px;}
+    25%  {background-color:rgb(47, 0, 255); left:var(--game-3-pos); bottom:var(--game-3-pos);}
+    50%  {background-color:rgb(0, 247, 255); left:0px; bottom:0px;}
+    75%  {background-color:rgb(63, 65, 207); left:var(--game-3-pos); bottom:var(--game-3-pos);}
     100% {background-color:rgb(204, 0, 255); left:0px; bottom:0px;}
 }
  
@@ -232,15 +323,15 @@ https://www.freecodecamp.org/news/how-to-create-a-fully-responsive-navbar-with-f
     position: absolute;
     background-color: rgb(255, 0, 221);
     animation-name: box3-3;
-    animation-duration: 4s;
+    animation-duration: 3s;
     animation-iteration-count: infinite;
 }
 
 @keyframes box3-4 {
     0%   {background-color:rgb(255, 0, 221); right:0px; bottom:0px;}
-    25%  {background-color:rgb(47, 0, 255); right:500px; bottom:500px;}
-    50%  {background-color:rgb(0, 247, 255); right:0px; bottom:500px;}
-    75%  {background-color:rgb(63, 65, 207); right:500px; bottom:0px;}
+    25%  {background-color:rgb(47, 0, 255); right:var(--game-3-pos); bottom:var(--game-3-pos);}
+    50%  {background-color:rgb(0, 247, 255); right:0px; bottom:0px;}
+    75%  {background-color:rgb(63, 65, 207); right:var(--game-3-pos); bottom:var(--game-3-pos);}
     100% {background-color:rgb(204, 0, 255); right:0px; bottom:0px;}
 }
  
@@ -251,98 +342,19 @@ https://www.freecodecamp.org/news/how-to-create-a-fully-responsive-navbar-with-f
     position: absolute;
     background-color: rgb(255, 0, 221);
     animation-name: box3-4;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-}
-
-
-/* Main - 4th game */
-
-@keyframes box4-1 {
-    0%   {background-color:rgb(255, 0, 221); left:0px; top:0px;}
-    25%  {background-color:rgb(47, 0, 255); left:500px; top:500px;}
-    50%  {background-color:rgb(0, 247, 255); left:0px; top:0px;}
-    75%  {background-color:rgb(63, 65, 207); left:500px; top:500px;}
-    100% {background-color:rgb(204, 0, 255); left:0px; top:0px;}
-}
- 
-#box-4-1 {
-    width: var(--box-side);
-    height: var(--box-side);
-    border-radius: 5px;
-    position: absolute;
-    background-color: rgb(255, 0, 221);
-    animation-name: box4-1;
-    animation-duration: 2.5s;
-    animation-iteration-count: infinite;
-}
-
-@keyframes box4-2 {
-    0%   {background-color:rgb(255, 0, 221); right:0px; top:0px;}
-    25%  {background-color:rgb(47, 0, 255); right:500px; top:500px;}
-    50%  {background-color:rgb(0, 247, 255); right:0px; top:0px;}
-    75%  {background-color:rgb(63, 65, 207); right:500px; top:500px;}
-    100% {background-color:rgb(204, 0, 255); right:0px; top:0px;}
-}
- 
-#box-4-2 {
-    width: var(--box-side);
-    height: var(--box-side);
-    border-radius: 5px;
-    position: absolute;
-    background-color: rgb(255, 0, 221);
-    animation-name: box4-2;
-    animation-duration: 2.75s;
-    animation-iteration-count: infinite;
-}
-
-@keyframes box4-3 {
-    0%   {background-color:rgb(255, 0, 221); left:0px; bottom:0px;}
-    25%  {background-color:rgb(47, 0, 255); left:500px; bottom:500px;}
-    50%  {background-color:rgb(0, 247, 255); left:0px; bottom:0px;}
-    75%  {background-color:rgb(63, 65, 207); left:500px; bottom:500px;}
-    100% {background-color:rgb(204, 0, 255); left:0px; bottom:0px;}
-}
- 
-#box-4-3 {
-    width: var(--box-side);
-    height: var(--box-side);
-    border-radius: 5px;
-    position: absolute;
-    background-color: rgb(255, 0, 221);
-    animation-name: box4-3;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-}
-
-@keyframes box4-4 {
-    0%   {background-color:rgb(255, 0, 221); right:0px; bottom:0px;}
-    25%  {background-color:rgb(47, 0, 255); right:500px; bottom:500px;}
-    50%  {background-color:rgb(0, 247, 255); right:0px; bottom:0px;}
-    75%  {background-color:rgb(63, 65, 207); right:500px; bottom:500px;}
-    100% {background-color:rgb(204, 0, 255); right:0px; bottom:0px;}
-}
- 
-#box-4-4 {
-    width: var(--box-side);
-    height: var(--box-side);
-    border-radius: 5px;
-    position: absolute;
-    background-color: rgb(255, 0, 221);
-    animation-name: box4-4;
     animation-duration: 3.25s;
     animation-iteration-count: infinite;
 }
 
-/* Main - 5th game */
+/* Main - 4th game */
 
-#game-5 {
+#game-4 {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#box-5-1 {
+#box-4-1 {
     width: 350px;
     height: 350px;
     border-radius: 5px;
@@ -350,7 +362,7 @@ https://www.freecodecamp.org/news/how-to-create-a-fully-responsive-navbar-with-f
     position: absolute;
 }
 
-#box-5-2 {
+#box-4-2 {
     width: 300px;
     height: 300px;
     border-radius: 5px;
@@ -359,7 +371,7 @@ https://www.freecodecamp.org/news/how-to-create-a-fully-responsive-navbar-with-f
 }
 
 
-@keyframes box5-3 {
+@keyframes box4-3 {
     0%   {background-color:rgb(255, 0, 221);}
     25%  {background-color:rgb(47, 0, 255);}
     50%  {background-color:rgb(0, 247, 255);}
@@ -368,22 +380,22 @@ https://www.freecodecamp.org/news/how-to-create-a-fully-responsive-navbar-with-f
 }
 
 
-#box-5-3 {
+#box-4-3 {
     width: var(--box-side);
     height: var(--box-side);
     border-radius: 5px;
     position: absolute;
 
-    animation-name: box5-3;
+    animation-name: box4-3;
     animation-duration: 4s;
     animation-iteration-count: infinite;
 
     transition: width 4s, height 4s;
 }
 
-#box-5-3:hover {
-    width: var(--game-section-width);
-    height: var(--game-section-height);
+#box-4-3:hover {
+    width: var(--game-section-side);
+    height: var(--game-section-side);
 }
 
 
@@ -431,4 +443,28 @@ footer {
     color: #fff;
     background-color: #000;
     border: 7px solid #fff;
+}
+
+
+
+/* Media queries */
+
+@media (max-width: 1350px) {
+    .sec-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 700px) {
+    :root {
+        --game-section-side: 400px;
+        --box-side: 66.6px;
+        --game-1-pos: 133.4px;
+        --game-2-pos: 333.4px;
+        --game-3-pos: 333.4px;
+    }
+
+    .rules > p {
+        font-size: 12px;
+    }
 }

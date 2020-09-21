@@ -1,8 +1,10 @@
+Göra med sidan/prios nu:
+- Ta bort spel 1 och byt alla klassnamn osv på spelen
 
+- Fixa med flexbx - 2:2 storskärm, sen 1:4 liten skärm
+- Fixa om bilderna för spelregler
 
-canvas spel:
-https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript
-
+- Stäm av med Kristian
 
 
 FRÅGOR:
