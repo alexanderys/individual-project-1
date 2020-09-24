@@ -423,15 +423,44 @@ https://www.freecodecamp.org/news/how-to-create-a-fully-responsive-navbar-with-f
 
 .contact-1 {
     padding: 30px;
+    color: #fff;
+}
+
+.contact-1 h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
 }
 
 .contact-2 {
-
+    color: #000;
     display: flex;
-
     justify-content: space-evenly;
+    margin-top: 30px;
 }
 
+.contact-2 section {
+    padding: 30px;
+    margin: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px  #b42bdd, 0 0 25px  #b42bdd, 0 0 30px  #b42bdd;
+}
+
+.contact-2 section:first-child p {
+    margin-bottom: 50px;
+}
+
+.contact-2 section:last-child input, .contact-2 section:last-child textarea {
+    margin-bottom: 20px;
+}
+
+.contact-2 section:last-child button {
+    background-color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    padding: 5px 10px;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
 
 /* Footer */
 
@@ -444,6 +473,7 @@ footer {
     background-color: #000;
     border: 7px solid #fff;
 }
+
 
 
 
@@ -465,6 +495,10 @@ footer {
     }
 
     .rules > p {
-        font-size: 12px;
+        font-size: 13px;
+    }
+
+    .contact-2 {
+        flex-direction: column;
     }
 }

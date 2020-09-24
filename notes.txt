@@ -1,10 +1,9 @@
-Göra med sidan/prios nu:
-- Ta bort spel 1 och byt alla klassnamn osv på spelen
+1. Stäm av med Kristian
+- Fråga om tillgänglighetsanpassning - hur mycekt bör inkluderas?
+- CSS breakpoints - vilka och hur strikt i detta fall?
+- fråga om form selectorn i JS, varför [0]
 
-- Fixa med flexbx - 2:2 storskärm, sen 1:4 liten skärm
-- Fixa om bilderna för spelregler
-
-- Stäm av med Kristian
+2. Formulär - checka tutorialsen från lektionerna
 
 
 FRÅGOR:
