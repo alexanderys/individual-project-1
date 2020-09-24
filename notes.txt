@@ -2,6 +2,7 @@
 - Fråga om tillgänglighetsanpassning - hur mycekt bör inkluderas?
 - CSS breakpoints - vilka och hur strikt i detta fall?
 - fråga om form selectorn i JS, varför [0]
+- hur utförligt bör jag kommentera koden
 
 2. Formulär - checka tutorialsen från lektionerna
 

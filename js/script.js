@@ -92,111 +92,93 @@ function overlapFourth(div) {
 
 
 
-/* / For form validation / */ 
- 
-/* The whole form - used when submitting form */
-const form = document.getElementsByTagName('form')[0];
 
-/* First Name */
+/* / For form validation / */ 
+
+const button = document.getElementById('button');
+button.disabled = true;
+
 const fname = document.getElementById('fname');
 const fnameError = document.querySelector('.fname-error');
-
-function showFnameError() {
-    if(fname.validity.valueMissing) {
-        fnameError.textContent = 'Vänligen fyll i förnamn.';
-    }
-}
-
-/* Last Name */
 
 const lname = document.getElementById('lname');
 const lnameError = document.querySelector('.lname-error');
 
-function showLnameError() {
-    if(lname.validity.valueMissing) {
-        lnameError.textContent = 'Vänligen fyll i efternamn.';
-    }
-}
-
-/* Email */
-
 const email = document.getElementById('email');
 const emailError = document.querySelector('.email-error');
-
-email.addEventListener('input', function (event) {
-  
-    if (email.validity.valid) {
-      emailError.innerHTML = '';
-      //emailError.className = 'error';
-    } else {
-      showEmailError();
-    }
-});
-
-function showEmailError() {
-    if(email.validity.valueMissing) {
-        emailError.textContent = 'Vänligen fyll i din eamil.';
-      } else if(email.validity.typeMismatch) {
-        emailError.textContent = 'Vänligen fyll i giltig email.';
-      } else if(email.validity.tooShort) {
-        emailError.textContent = `Din email behöver vara minst ${ email.minLength } tecken; du skrev in ${ email.value.length }.`;
-      }
-}
-
-/* Phone Number */
-
-const phone = document.getElementById('phone');
-const phoneError = document.querySelector('.phone-error');
-
-phone.addEventListener('input', function (event) {
-  
-    if (!phone.value === "") {
-        showPhoneError();
-    } else {
-        phoneError.innerHTML = '';
-    }
-});
-
-function showPhoneError() {
-    phoneError.textContent = "Vänligen använd enbart siffror.";
-}
-
-/* Message */
 
 const message = document.getElementById('message');
 const messageError = document.querySelector('.message-error');
 
-message.addEventListener('input', function (event) {
-  
-    if (message.validity.valid) {
-      messageError.innerHTML = '';
-      //messageError.className = 'error';
+fname.addEventListener('input', function() {
+    if(fname.validity.valid) {
+        fnameError.className = 'fname-error';
+        fnameError.innerHTML = '';
+        submit();
     } else {
-      showMessageError();
+        fnameError.className = 'fname-error error-active';
+        fnameError.innerHTML = 'Vänligen fyll i förnamn.';
+        submit();
     }
-});
+})
 
-function showMessageError() {
-    messageError.textContent = `Du får använda max 500 tecken; du har skrivit in ${message.value.length}.`;
+lname.addEventListener('input', function() {
+    if(lname.validity.valid) {
+        lnameError.className = 'lname-error';
+        lnameError.innerHTML = '';
+        submit();
+    } else {
+        lnameError.className = 'lname-error error-active';
+        lnameError.innerHTML = 'Vänligen fyll i efternamn.';
+        submit();
+    }
+})
+
+email.addEventListener('input', function() {
+    if(email.validity.valid) {
+        emailError.className = 'email-error';
+        emailError.innerHTML = '';
+        submit();
+    } else {
+        emailError.className = 'email-error error-active';
+        if(email.validity.valueMissing) {
+            emailError.textContent = "Vänligen fyll i email.";
+        } else if(email.validity.typeMismatch) {
+            emailError.textContent = "Vänligen fyll i giltig email.";
+        } else if(email.validity.tooShort) {
+            emailError.textContent = `Din email behöver vara minst ${email.minLength} tecken; du har fyllt i ${email.value.length}.`;
+        }
+        submit();
+    }
+})
+
+message.addEventListener('input', function() {
+    if(message.validity.valid) {
+        messageError.className = 'message-error';
+        messageError.innerHTML = '';
+        submit();
+    } else {
+        messageError.className = 'message-error error-active';
+        messageError.innerHTML = 'Vänligen fyll i ditt meddelande.';
+        submit();
+    }
+})
+
+
+function submit() {
+    if(fname.validity.valid && lname.validity.valid && email.validity.valid && message.validity.valid) {
+        button.disabled = false;
+        button.style.cursor = 'pointer';
+        button.style.backgroundColor = '#b9ffb3';
+        button.style.color = '#000';
+        button.style.border = '2px solid #5dd452';
+        button.style.boxShadow = '0 0 5px #5dd452, 0 0 10px #5dd452';
+    } else {
+        button.disabled = true;
+        button.style.cursor = 'unset';
+        button.style.backgroundColor = '#fff';
+        button.style.color = 'aaa';
+        button.style.border = '2px solid #aaa';
+        button.style.boxShadow = 'none';
+    }
 }
-
-
-form.addEventListener('submit', function (event) {
-    event.preventDefault();
-  
-    if(!fname.validity.valid) {
-        showFnameError();
-    }
-
-    if(!lname.validity.valid) {
-        showLnameError();
-    }
-
-    if(!email.validity.valid) {
-        showEmailError();
-    }
-
-    if(!message.validity.valid) {
-        showMessageError();
-    }
-});  
