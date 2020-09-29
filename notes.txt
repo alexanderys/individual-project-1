@@ -1,12 +1,20 @@
 1. Stäm av med Kristian
 - Fråga om tillgänglighetsanpassning - hur mycekt bör inkluderas?
+	- Semantisk HTML
+	- aria-live på formulär error meddelanden
+	- bilder har alt="" ifyllt
+
+- SEO --> Bör description vara på svenska eller engelska om sidan är på svenska?
+
 - CSS breakpoints - vilka och hur strikt i detta fall?
-- fråga om form selectorn i JS, varför [0]
+
 - hur utförligt bör jag kommentera koden
 
-2. Formulär - checka tutorialsen från lektionerna
+- vad Kristian tycker om min formulär validering
 
+- FUNKTION restore
 
-FRÅGOR:
-- Navbaren - centrera mittenobjektet ifall texterna är olika långa. Går det med flexbox?
-- Måste man använda flexbox överallt där det går att använda för att få VG?
+- i kursmålen är ett av kursmålen att använda färdig JS kod - bör jag använda ett färdigt library alltså?
+
+- kolla hur det ser ut i mobilen (hur?)
+- även testa om spelen funkar, om touchskärm ersätter click

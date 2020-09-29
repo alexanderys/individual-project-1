@@ -1,9 +1,39 @@
 
 /* / For games / */ 
 
+/* When each game is finished, this function is 
+called to create a button that enables game restart */
+
+function createButton(game) {
+    const message = document.getElementById(game);
+    let button = document.createElement('button');
+    let text = document.createTextNode('Klicka för att starta om spelet!');
+    button.appendChild(text)
+    message.appendChild(button);
+    button.setAttribute('onclick', 'restore(divArray1, "game-1")');
+    button.setAttribute('class', 'button')
+}
+
+// NOTE - proper parameters for above and below function to make general (e.g. remove divarray1 etcetc)
+
+/*  */
+
+function restore(divs, game) {
+    const message2 = document.getElementById(game);
+    console.log(message2); //
+    message2.innerHTML = "";
+        for(let i = 0; i < divs.length; i++) {
+            divs[i].style.display = 'block';
+            console.log(divs[i]); //
+            message2.appendChild(divs[i]);
+            console.log(message2); //
+        }
+        divArray1 = [];
+}
+
 /* For 1st game - To remove each div element when clicked */
 
-const divArray1 = [];
+let divArray1 = [];
 
 function removeFirst(eachDiv) {
     const element = document.getElementById(eachDiv);
@@ -13,25 +43,8 @@ function removeFirst(eachDiv) {
         const message = document.getElementById('game-1');
         message.innerHTML = 'DU VANN! <br> Uppdatera sidan för att spela igen!';
         
-/*         let button = document.createElement('button');
-        let text = document.createTextNode('Click to restart game!');
-        button.appendChild(text)
-        button.setAttribute('onclick', 'restore(divArray1)');
-        message.appendChild(button); */
+        createButton('game-1');
     }
-}
-
-function restore(divs) {
-    const message2 = document.getElementById('game-1');
-    console.log(message2)
-    message2.innerHTML = "";
-     
-/*     for(let i = 0; i < divs.length; i++) {
-        divs[i].style.display = 'block';
-        console.log(divs[i]);
-        message2.appendChild(divs[i]);
-        console.log(message2);
-    } */
 }
 
 
@@ -66,7 +79,7 @@ function removeThird(eachDiv) {
     }
 }
 
-function looseThird(eachDiv) {
+function looseThird() {
     const message = document.getElementById('game-3');
     message.innerHTML = 'DU FÖRLORA! <br> Uppdatera sidan för att spela igen!';
 }
