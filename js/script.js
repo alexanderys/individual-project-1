@@ -4,7 +4,7 @@
 /* When each game is finished, this function is 
 called to create a button that enables game restart */
 
-function createButton(game) {
+/* function createButton(game) {
     const message = document.getElementById(game);
     let button = document.createElement('button');
     let text = document.createTextNode('Klicka för att starta om spelet!');
@@ -12,13 +12,13 @@ function createButton(game) {
     message.appendChild(button);
     button.setAttribute('onclick', 'restore(divArray1, "game-1")');
     button.setAttribute('class', 'button')
-}
+} */
 
 // NOTE - proper parameters for above and below function to make general (e.g. remove divarray1 etcetc)
 
 /*  */
 
-function restore(divs, game) {
+/* function restore(divs, game) {
     const message2 = document.getElementById(game);
     console.log(message2); //
     message2.innerHTML = "";
@@ -28,79 +28,184 @@ function restore(divs, game) {
             message2.appendChild(divs[i]);
             console.log(message2); //
         }
-        divArray1 = [];
-}
+        boxes1 = 0;
+} */
 
 /* For 1st game - To remove each div element when clicked */
 
-let divArray1 = [];
+let boxes1 = 0;
+const game1 = document.querySelectorAll('#game-1 div');
 
-function removeFirst(eachDiv) {
-    const element = document.getElementById(eachDiv);
-    element.style.display = 'none';
-    divArray1.push(element);
-    if(divArray1.length === 4) {
-        const message = document.getElementById('game-1');
-        message.innerHTML = 'DU VANN! <br> Uppdatera sidan för att spela igen!';
-        
-        createButton('game-1');
+game1.forEach(eachBox => {
+    eachBox.addEventListener('click', removeFirst)
+})
+
+function removeFirst() {
+    this.classList.remove('visible');
+    this.classList.add('invisible');
+    boxes1++;
+    if(boxes1 === 4) {
+        finished1()
     }
 }
+
+function finished1() {
+    const message = document.getElementById('game-1');
+    message.innerHTML = 'DU VANN! <br>';
+
+    const button = document.createElement('button');
+    const text = document.createTextNode('Spela igen');
+    button.appendChild(text);
+    button.setAttribute('class', 'button');
+    message.appendChild(button);
+
+    button.addEventListener('click', function() {
+        message.innerHTML = "";
+        game1.forEach(eachBox => { //
+            message.appendChild(eachBox);
+            eachBox.classList.remove('invisible');
+            eachBox.classList.add("visible");
+        })
+        boxes1 = 0; //
+    })
+}
+
 
 
 /* For 2nd game - To remove each div element when clicked */
 
+let boxes2 = 0;
+const game2 = document.querySelectorAll('#game-2 div');
 
-const divArray2 = [];
+game2.forEach(eachBox => {
+    eachBox.addEventListener('click', removeSecond)
+})
 
-function removeSecond(eachDiv) {
-    const element = document.getElementById(eachDiv);
-    element.style.display = 'none';
-    divArray2.push(element);
-    if(divArray2.length === 4) {
-        const message = document.getElementById('game-2');
-        message.innerHTML = 'DU VANN! <br> Uppdatera sidan för att spela igen!';
+function removeSecond() {
+    this.classList.remove('visible');
+    this.classList.add('invisible');
+    boxes2++;
+    if(boxes2 === 4) {
+        finished2()
     }
+}
+
+function finished2() {
+    const message = document.getElementById('game-2');
+    message.innerHTML = 'DU VANN! <br>';
+
+    const button = document.createElement('button');
+    const text = document.createTextNode('Spela igen');
+    button.appendChild(text);
+    button.setAttribute('class', 'button');
+    message.appendChild(button);
+
+    button.addEventListener('click', function() {
+        message.innerHTML = "";
+        game2.forEach(eachBox => { //
+            message.appendChild(eachBox);
+            eachBox.classList.remove('invisible');
+            eachBox.classList.add("visible");
+        })
+        boxes2 = 0; //
+    })
 }
 
 
 /* For 3rd game - To remove each div element when clicked*/
 
+let boxes3 = 0;
+const game3 = document.querySelectorAll('#game-3 div');
 
-const divArray3 = [];
+game3.forEach(eachBox => {
+    eachBox.addEventListener('click', removeThird)
+})
 
-function removeThird(eachDiv) {
-    const element = document.getElementById(eachDiv);
-    element.style.display = 'none';
-    divArray3.push(element);
-    if(divArray3.length === 3) {
-        const message = document.getElementById('game-3');
-        message.innerHTML = 'DU VANN! <br> Uppdatera sidan för att spela igen!';
+function removeThird() {
+    if(this.classList.contains('loose')) {
+        finished3(true)
     }
-}
 
-function looseThird() {
+    this.classList.remove('visible');
+    this.classList.add('invisible');
+    boxes3++;
+    if(boxes3 === 3) {
+        finished3(false)
+    }
+}   
+
+
+function finished3(loose) {
     const message = document.getElementById('game-3');
-    message.innerHTML = 'DU FÖRLORA! <br> Uppdatera sidan för att spela igen!';
+
+    if(loose) {
+        message.innerHTML = 'DU FÖRLORA! <br>';
+    } else {
+        message.innerHTML = 'DU VANN! <br>';
+    }
+
+    const button = document.createElement('button');
+    const text = document.createTextNode('Spela igen');
+    button.appendChild(text);
+    button.setAttribute('class', 'button');
+    message.appendChild(button);
+
+    button.addEventListener('click', function() {
+        message.innerHTML = "";
+        game3.forEach(eachBox => { //
+            message.appendChild(eachBox);
+            eachBox.classList.remove('invisible');
+            eachBox.classList.add("visible");
+        })
+        boxes3 = 0; //
+    })
 }
 
 
 /* For 4th game */
 
-/* 
-Explanation for style.width versus clientWidth (style.width return undefined)
-https://stackoverflow.com/questions/8133146/difference-between-style-width-and-offsetwidth-in-html
- */
+const game4 = document.querySelectorAll('#game-4 div');
 
-function overlapFourth(div) {
-    const element = document.getElementById(div);
-    if(element.clientWidth >= 300 && element.clientWidth <= 350) {
-        const message = document.getElementById('game-4');
-        message.innerHTML = 'DU VANN! <br> Uppdatera sidan för att spela igen!';
-    } else {
-        const message = document.getElementById('game-4');
-        message.innerHTML = 'DU FÖRLORA! <br> Uppdatera sidan för att spela igen!';
+game4.forEach(eachBox => {
+    eachBox.addEventListener('click', overlap);
+})
+
+function overlap(e) {
+    if(!e.target.classList.contains('match')) {
+        return;
     }
+
+    const element = document.getElementById('box-4-3');
+    if(element.clientWidth >= 300 && element.clientWidth <= 350) {
+        finished4(false);
+    } else {
+        finished4(true);
+    }
+}
+
+function finished4(loose) {
+    const message = document.getElementById('game-4');
+
+    if(loose) {
+        message.innerHTML = 'DU FÖRLORA! <br>';
+    } else {
+        message.innerHTML = 'DU VANN! <br>';
+    }
+
+    const button = document.createElement('button');
+    const text = document.createTextNode('Spela igen');
+    button.appendChild(text);
+    button.setAttribute('class', 'button');
+    message.appendChild(button);
+
+    button.addEventListener('click', function() {
+        message.innerHTML = "";
+        game4.forEach(eachBox => { //
+            message.appendChild(eachBox);
+            eachBox.classList.remove('invisible');
+            eachBox.classList.add("visible");
+        })
+    })
 }
 
 
@@ -108,8 +213,11 @@ function overlapFourth(div) {
 
 /* / For form validation / */ 
 
-const button = document.getElementById('button');
-button.disabled = true;
+const submitButton = document.getElementById('button');
+submitButton.disabled = true;
+submitButton.addEventListener('click', function(event) {
+    event.preventDefault();
+})
 
 const fname = document.getElementById('fname');
 const fnameError = document.querySelector('.fname-error');
@@ -179,19 +287,20 @@ message.addEventListener('input', function() {
 
 
 function submit() {
+    
     if(fname.validity.valid && lname.validity.valid && email.validity.valid && message.validity.valid) {
-        button.disabled = false;
-        button.style.cursor = 'pointer';
-        button.style.backgroundColor = '#b9ffb3';
-        button.style.color = '#000';
-        button.style.border = '2px solid #5dd452';
-        button.style.boxShadow = '0 0 5px #5dd452, 0 0 10px #5dd452';
+        submitButton.disabled = false;
+        submitButton.style.cursor = 'pointer';
+        submitButton.style.backgroundColor = '#b9ffb3';
+        submitButton.style.color = '#000';
+        submitButton.style.border = '2px solid #5dd452';
+        submitButton.style.boxShadow = '0 0 5px #5dd452, 0 0 10px #5dd452';
     } else {
-        button.disabled = true;
-        button.style.cursor = 'unset';
-        button.style.backgroundColor = '#fff';
-        button.style.color = 'aaa';
-        button.style.border = '2px solid #aaa';
-        button.style.boxShadow = 'none';
+        submitButton.disabled = true;
+        submitButton.style.cursor = 'unset';
+        submitButton.style.backgroundColor = '#fff';
+        submitButton.style.color = 'aaa';
+        submitButton.style.border = '2px solid #aaa';
+        submitButton.style.boxShadow = 'none';
     }
 }

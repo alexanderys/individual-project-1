@@ -399,12 +399,34 @@ https://www.freecodecamp.org/news/how-to-create-a-fully-responsive-navbar-with-f
 }
 
 
+/* From JS */
+
+.invisible {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.button {
+    font-family: 'Press Start 2P';
+    cursor: pointer;
+    margin-top: 25px;
+    padding: 5px;
+    background-color: rgb(118, 233, 108);
+    color: #000;
+}
+
 /* "Spelregler" page */
 /* Basic styling for the .main-container and their child section elements inherited from previous styling */
 
 .rules {
-    width: 60%;
+    box-sizing: border-box;
+    width: 50%;
     padding: 20px;
+    max-height: 700px;
+    overflow: auto;
 }
 
 .rules > p {
@@ -417,6 +439,7 @@ https://www.freecodecamp.org/news/how-to-create-a-fully-responsive-navbar-with-f
     max-width: 100%;
     border-radius: 7px;
 }
+
 
 /* "Kontakt" page */
 /* Basic styling for the .main-container and their child section elements inherited from previous styling */
