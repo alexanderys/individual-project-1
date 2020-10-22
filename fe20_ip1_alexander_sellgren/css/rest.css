@@ -1,0 +1,11 @@
+:root { font-family: 'Press Start 2P', cursive; }
+
+body,
+body * {
+    margin:             unset;
+    box-sizing:         unset;
+    padding:            unset;
+    font-size:          unset;
+    color:              unset;
+    text-decoration:    unset;
+}
